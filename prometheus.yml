@@ -1,0 +1,15 @@
+global:
+  scrape_interval: 15s  # Intervalo de recolección de métricas
+
+scrape_configs:
+  - job_name: 'servicio-usuario'
+    static_configs:
+      - targets: ['192.168.65.3:30080']
+
+  - job_name: 'servicio-producto'
+    static_configs:
+      - targets: ['servicio-producto:3002']
+
+  - job_name: 'servicio-pedido'
+    static_configs:
+     - targets: ['servicio-pedido:3001']

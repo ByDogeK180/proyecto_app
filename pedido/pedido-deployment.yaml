@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: servicio-pedido
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: servicio-pedido
+  template:
+    metadata:
+      labels:
+        app: servicio-pedido
+    spec:
+      containers:
+      - name: servicio-pedido
+        image: bydogek18/servicio-pedido:latest
+        ports:
+        - containerPort: 3001  

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: servicio-producto
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: servicio-producto
+  template:
+    metadata:
+      labels:
+        app: servicio-producto
+    spec:
+      containers:
+      - name: servicio-producto
+        image: bydogek18/servicio-producto:latest
+        ports:
+        - containerPort: 3002
